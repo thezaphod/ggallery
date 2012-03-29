@@ -63,10 +63,11 @@ grails.hibernate.cache.queries = true
 environments {
     development {
         grails.logging.jul.usebridge = true
+        grails.serverURL = "http://localhost:8080/ggallery"
     }
     production {
         grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://ggallery.intermobile.ca"
     }
 }
 
@@ -91,3 +92,31 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
+
+// find out these values form your AWS account
+//    https://aws-portal.amazon.com/gp/aws/securityCredentials
+access = 'AAAAAAAAAAAAAAAAAAAA'
+secret = 'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS'
+
+grails {
+    plugin {
+        aws {
+            credentials {
+                accessKey = access
+                secretKey = secret
+            }
+
+            s3 {
+                bucket = "ggallery"
+            }
+        }
+    }
+
+    simpledb {
+        accessKey = access
+        secretKey = secret
+        domainNamePrefix = grails.util.GrailsUtil.environment + "-"//optional, used when the same AWS account is shared between more than one environment
+        dbCreate = 'drop-create' // optional, one of 'drop', 'create', 'drop-create'
+    }
+}
+

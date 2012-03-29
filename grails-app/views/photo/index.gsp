@@ -1,17 +1,113 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: igor
-  Date: 12-03-28
-  Time: 7:32 PM
-  To change this template use File | Settings | File Templates.
---%>
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-<head>
-  <title></title>
-</head>
-<body>
+<head><title>${album.title}</title></head>
+
+<style type="text/css">
+
+div {
+    float:left;
+    margin:5px 5px 5px 5px;
+    font-family:Tahoma,Verdana,serif;
+    color: #333333;
+}
+
+.inv {
+    margin:0px 5px 5px 0;
+    background-color : gray ;
+    color : white ;
+    padding-left:5px;
+    padding-right:7px;
+    border-radius: 5px;
+}
+
+.rnd {
+    margin:0px 5px 5px 0;
+    background-color : white ;
+    color : black ;
+    padding-left:5px;
+    padding-right:7px;
+    border-radius: 5px;
+}
+
+label {
+    width:80px;
+    float:left;
+}
+
+input, select, textarea {
+    font-family: Verdana, Arial, Helvetica, serif;
+    font-size:  100%;
+}
+
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    function share(checked, uid) {
+
+        if (checked == true) {
+            $.get("${request.contextPath}/api/addObject?filePath=" + uid)
+        } else {
+            $.get("${request.contextPath}/api/deleteObject?filePath=" + uid)
+        }
+
+    }
+
+</script>
+
+<body bgcolor="#dddddd">
+
+
+<div style="clear:left; margin-left: 5px;"> <h1><div class="inv"> GGallery </div> <div class="rnd"> ${album.title} </h1> </div> </div>
+
+<div class="inv" style="clear:left; margin: 10px 10px 10px 10px; padding: 10px 10px 10px 10px;">
+    <h3>Share selected images </h3><br/>
+    <form action="${request.contextPath}/api/sendEmail" method="get">
+        <label>Title:</label> <input type="text" name="title" size="25" value="Album Title" class=rnd/><br />
+        <label>From:</label> <input type="text" name="from" size="30" value="gallery@intermobile.ca" /><br />
+        <label>Send to:</label> <input type="text" name="to" size="30" value="gallery@intermobile.ca" /><br />
+        <label>Subject:</label> <input type="text" name="subject" size="50" value="Here are some photos I'd like to share with you."/><br />
+        <label>Text:</label>
+        <textarea name="email" cols="50" rows="3">
+Greetings,
+Here are a few photos I'd like to share with you.
+Enjoy
+        </textarea>
+        <br />
+        <input type="submit" value="Send" />
+    </form>
+</div>
+
+<div >
+
+    <% album.photos.sort{ it.filePath }.each { obj -> %>
+
+    <div style="background-color: #ffffff ;border-style:solid; border-radius: 5px; box-shadow:3px 3px 3px #555555; border-width:1px; border-color:gray; padding: 0 0;">
+
+        <div style="border-style:solid; border-width:1px; border-color:gray; padding: 0 0;">
+            <a href="${obj.url}"> <img SRC="${obj.url}" width="208" height="158" BORDER="0"></a>
+        </div>
+
+        <div style="clear:left;">
+            ${obj.caption}
+        </div>
+
+        <div style="clear:left; margin-left: 5px;" class="inv">
+            <input type="checkbox" name="add" value="share" alt="${obj.filePath}" onchange="share(this.checked, this.alt)" /> share
+        </div>
+
+    </div>
+    <% } %>
+
+</div>
+
+
 
 </body>
 </html>
+
+
+
+

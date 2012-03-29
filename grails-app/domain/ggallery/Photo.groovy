@@ -2,6 +2,13 @@ package ggallery
 
 class Photo {
 
-    static constraints = {
-    }
+    String id
+
+    String filePath
+
+    String caption
+
+    String url
+
+    static mapWith = "simpledb"
 }

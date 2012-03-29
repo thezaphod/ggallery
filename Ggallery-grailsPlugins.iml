@@ -37,6 +37,9 @@
     <content url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/simpledb-0.3">
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/simpledb-0.3/grails-app/i18n" isTestSource="false" />
     </content>
+    <content url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/svn-1.0.2">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/svn-1.0.2/src/groovy" isTestSource="false" />
+    </content>
     <content url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/tomcat-2.0.1" />
     <content url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/webxml-1.4.1">
       <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/webxml-1.4.1/src/groovy" isTestSource="false" />

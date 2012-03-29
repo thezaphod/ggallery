@@ -2,6 +2,18 @@ package ggallery
 
 class Email {
 
-    static constraints = {
-    }
+    String id
+
+    String to
+
+    String from
+
+    String subject
+
+    String text
+
+    Album album
+
+    static mapWith = "simpledb"
+
 }
