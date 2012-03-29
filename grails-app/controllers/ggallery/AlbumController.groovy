@@ -4,6 +4,7 @@ class AlbumController {
 
     // injected
     def aws
+    def emailService
 
     def index() { }
 
@@ -12,10 +13,10 @@ class AlbumController {
         String albumId = System.currentTimeMillis()
 
 
-        def email = new Email(from: params.from, to: params.to, subject: params.subject, text: params.email, url: "${getSiteUrl(request)}/album/show?id=")
-        email.save(failOnError: true, flush: true)
+        def msg = new Email(from: params.from, to: params.to, subject: params.subject, text: params.email, url: "${getSiteUrl(request)}/album/show?id=")
+        msg.save(failOnError: true, flush: true)
 
-        def album = new Album(title: params.title, photos: new HashSet(), email: email, url: "${getSiteUrl(request)}/album/show?id=")
+        def album = new Album(title: params.title, photos: new HashSet(), email: msg, url: "${getSiteUrl(request)}/album/show?id=")
 
         // create album
         session.images.each() { filePath ->
@@ -31,20 +32,20 @@ class AlbumController {
 
         String albumUrl = "${getSiteUrl(request)}/album/show?id=" + album.id
 
-        email.url = albumUrl
-        email.save(failOnError: true)
+        msg.url = albumUrl
+        msg.save(failOnError: true)
 
         album.url = albumUrl
         album.save(failOnError: true)
 
-        email.url = albumUrl
-        email.save(failOnError: true)
+        msg.url = albumUrl
+        msg.save(failOnError: true)
 
         session.album = album
         redirect(action: "show")
 
-        print email.url
-        print album.id
+        // send e-mail
+        emailService.send(msg)
     }
 
     def show() {
