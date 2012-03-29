@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="GrailsWeb">
+      <configuration>
+        <webroots>
+          <root url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/jquery-1.7.1/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/simpledb-0.3/web-app" relative="/" />
+        </webroots>
+        <sourceRoots />
+      </configuration>
+    </facet>
+    <facet type="hibernate" name="Hibernate">
+      <configuration>
+        <datasource-map />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/aws-1.2.12.2">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/aws-1.2.12.2/src/groovy" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/hibernate-2.0.1" />
+    <content url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/jquery-1.7.1">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/jquery-1.7.1/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/jquery-1.7.1/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/jquery-1.7.1/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/jquery-1.7.1/grails-app/taglib" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/resources-1.1.6">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/resources-1.1.6/src/java" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/resources-1.1.6/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/resources-1.1.6/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/resources-1.1.6/grails-app/taglib" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/simpledb-0.3">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/simpledb-0.3/grails-app/i18n" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/tomcat-2.0.1" />
+    <content url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/webxml-1.4.1">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.0.1/projects/GGallery/plugins/webxml-1.4.1/src/groovy" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="grails-2.0.1" level="application" />
+    <orderEntry type="module-library" exported="">
+      <library name="Grails User Library (Ggallery-grailsPlugins)">
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-plugin-support/jars/grails-datastore-gorm-plugin-support-1.0.0.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/javax.activation/activation/jars/activation-1.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/javax.mail/mail/jars/mail-1.4.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.jamesmurty.utils/java-xmlbuilder/jars/java-xmlbuilder-0.4.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/net.java.dev.jets3t/jets3t/jars/jets3t-0.8.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-httpclient/commons-httpclient/jars/commons-httpclient-3.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/stax/stax-api/jars/stax-api-1.0.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/stax/stax/jars/stax-1.2.0.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.codehaus.jackson/jackson-core-asl/jars/jackson-core-asl-1.9.6.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.2-beta1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.2-beta1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.amazonaws/aws-java-sdk/jars/aws-java-sdk-1.2.15.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-simpledb/jars/grails-datastore-simpledb-0.3.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-simpledb/jars/grails-datastore-gorm-simpledb-0.3.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-web/jars/grails-datastore-web-1.0.0.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/junit/junit/jars/junit-4.8.1.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework/spring-test/jars/spring-test-3.0.5.RELEASE.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-test/jars/grails-test-1.3.7.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.grails/grails-datastore-gorm-test/jars/grails-datastore-gorm-test-1.0.0.RELEASE.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+
