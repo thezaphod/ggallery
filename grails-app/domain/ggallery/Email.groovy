@@ -7,7 +7,7 @@ class Email {
     String from
     String subject
     String text
-    Album album
+    String url
 
     static mapWith = "simpledb"
 

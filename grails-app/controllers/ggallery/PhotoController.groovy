@@ -8,15 +8,27 @@ class PhotoController {
     // injected
     def aws
 
-    def addToAlbum() {
-        render(status: 200, text: 'Added')
+    // add/remove file from album
+    def toggle() {
+        print params
+
+        if (session.images == null) session.images = []
+
+        if (session.images.contains(params.file)) {
+            session.images.remove[params.file]
+        } else {
+            session.images.add(params.file)
+        }
+
+        render(status: 200, text: 'done')
     }
 
-    def removeFromAlbum() {
-        render(status: 200, text: 'Removed')
-    }
+
     // display image directory
     def index() {
+
+        session.images = null
+        session.album = null
 
         def c = new AWSCredentials(grailsApplication.config.grails.plugin.aws.credentials.accessKey,
                 grailsApplication.config.grails.plugin.aws.credentials.secretKey)
@@ -27,8 +39,6 @@ class PhotoController {
 
         // create Album for display only
         def album = new Album(title: params.id, url: request.getRequestURL(), photos: new HashSet())
-
-        session.images = [:]
 
         // enumerate through images
         objs.each() {
@@ -41,9 +51,6 @@ class PhotoController {
             o.id = Long.toHexString(System.nanoTime())
 
             album.photos.add(o)
-
-            // use expireDate as an image ID
-            session.images[o.id] = o.url
         }
 
         [album: album]

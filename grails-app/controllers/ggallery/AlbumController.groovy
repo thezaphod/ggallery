@@ -12,8 +12,8 @@ class AlbumController {
         String albumId = System.currentTimeMillis()
 
 
-        def email = new Email(from: params.from, to: params.to, subject: params.subject, text: params.email, url: "${getSiteUrl(request)}/album/show?id=" )
-        email.save(failOnError: true, flush:true)
+        def email = new Email(from: params.from, to: params.to, subject: params.subject, text: params.email, url: "${getSiteUrl(request)}/album/show?id=")
+        email.save(failOnError: true, flush: true)
 
         def album = new Album(title: params.title, photos: new HashSet(), email: email, url: "${getSiteUrl(request)}/album/show?id=")
 
@@ -22,7 +22,7 @@ class AlbumController {
 
 
             def pubUrl = aws.s3().on("ggallery").publicUrlFor(1.hour, filePath)
-            def f = new Photo(filePath: filePath, caption: filePath, url: pubUrl )
+            def f = new Photo(filePath: filePath, caption: filePath, url: pubUrl)
             f.save(failOnError: true)
             album.photos.add(f)
         }
@@ -57,7 +57,7 @@ class AlbumController {
             album = session.album
         }
 
-       [album: album]
+        [album: album]
     }
 
 

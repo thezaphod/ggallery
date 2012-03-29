@@ -1,8 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-<head><title>${album}</title></head>
+<head>
 
-<% request.setAttribute('resources.need.layout', false)  %>
+    <g:javascript library="application"/>
+
+    <title>${album.title}</title>
+
+</head>
+
 
 <style type="text/css">
 
@@ -60,18 +65,7 @@ input, select, textarea {
 
 </style>
 
-<g:javascript library="jquery" />
-
-<script type="text/javascript">
-    function share(checked, uid) {
-        if (checked == true) {
-
-            $.post("http://localhost:8080/ggallery/photo/addToAlbum?id=")
-        } else {
-            $.post("${request.contextPath}/photo/removeFromAlbum?id=")
-        }
-    }
-</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.js" type="text/javascript"></script>
 
 <body bgcolor="#444444">
 
@@ -79,11 +73,11 @@ input, select, textarea {
 
     <div class="inv" style="clear:left; margin: 10px 10px 10px 10px; padding: 10px 10px 10px 10px;">
         <h3>Share selected images </h3><br/>
-        <form action="${request.contextPath}/api/sendEmail" method="get">
+        <form action="${request.contextPath}/album/create" method="get">
             <label>Title:</label> <input type="text" name="title" size="25" value="Album Title" class=rnd/><br />
             <label>From:</label> <input type="text" name="from" size="30" value="ggallery@intermobile.ca" /><br />
             <label>Send to:</label> <input type="text" name="to" size="30" value="ggallery@intermobile.ca" /><br />
-            <label>Subject:</label> <input type="text" name="subject" size="50" value="Here are a few photos I'd like to share with you."/><br />
+            <label>Subject:</label> <input type="text" name="subject" size="50" value="Photo Album"/><br />
             <label>Text:</label>
             <textarea name="email" cols="50" rows="3">
 Greetings,
@@ -108,8 +102,10 @@ Enjoy
                 ${obj.caption}
             </div>
 
+
             <div style="clear:left; margin-left: 5px;" class="inv">
-                <input type="checkbox" name="add" value="share" alt="${obj.filePath}" onchange="share(this.checked, this.alt)" /> share
+                <input type="checkbox" name="add" value="share" alt="${obj.filePath}" onchange="${remoteFunction(action: 'toggle', params: '\'file=\' + this.alt' )}" /> share
+
             </div>
 
         </div>
