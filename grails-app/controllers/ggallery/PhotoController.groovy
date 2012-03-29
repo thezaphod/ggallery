@@ -8,6 +8,13 @@ class PhotoController {
     // injected
     def aws
 
+    def addToAlbum() {
+        render(status: 200, text: 'Added')
+    }
+
+    def removeFromAlbum() {
+        render(status: 200, text: 'Removed')
+    }
     // display image directory
     def index() {
 
@@ -18,7 +25,7 @@ class PhotoController {
 
         def objs = s3Service.listObjects("ggallery", "", "")
 
-        // create collection for display only
+        // create Album for display only
         def album = new Album(title: params.id, url: request.getRequestURL(), photos: new HashSet())
 
         session.images = [:]

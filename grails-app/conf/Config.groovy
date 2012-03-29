@@ -95,8 +95,8 @@ log4j = {
 
 // find out these values form your AWS account
 //    https://aws-portal.amazon.com/gp/aws/securityCredentials
-access = 'AAAAAAAAAAAAAAAAAAAA'
-secret = 'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS'
+access = '15RCBVYHQAM13HH24B02'
+secret = 'mJfI/CdXTuFVeg+nG5/b/nV6oTU3bedftpBNoCVQ'
 
 grails {
     plugin {
