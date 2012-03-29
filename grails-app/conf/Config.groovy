@@ -67,7 +67,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        grails.serverURL = "http://ggallery.intermobile.ca"
+        grails.serverURL = "http://ggallery.elasticbeanstalk.com"
     }
 }
 
@@ -95,8 +95,8 @@ log4j = {
 
 // find out these values form your AWS account
 //    https://aws-portal.amazon.com/gp/aws/securityCredentials
-access = '15RCBVYHQAM13HH24B02'
-secret = 'mJfI/CdXTuFVeg+nG5/b/nV6oTU3bedftpBNoCVQ'
+access = 'AAAAAAAAAAAAAAAAAAAA'
+secret = 'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS'
 
 grails {
     plugin {
